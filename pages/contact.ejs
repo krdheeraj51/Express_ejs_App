@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact</title>
+    <% include ../include/header %>
+
+</head>
+<body>
+    <% include ../include/navbar %>
+
+       <!-- Main Content Section -->
+        <main class="main">
+            <!-- Page Title -->
+            <div class="page-title text-center">
+                <h2 class="title"> Contact us </h2>
+                <p class="description light"><!--  Holisticly brand sustainable solutions rather than clicks-and-mortar applications.
+                    <br> Phosfluorescently whiteboard fully tested initiatives.  --></p>
+            </div>
+            <!-- Page Title -->
+            <!-- Breadcrumbs -->
+            <div class="breadcrumbs">
+                <div class="container">
+                    <span class="parent"> <i class="fa fa-home"></i> <a href="index.php"> Home </a> </span>
+                    <i class="fa fa-chevron-right"></i>
+                    <span class="child"> Contact </span>
+                </div>
+            </div>
+            <!-- Breadcrumbs -->
+
+            <div class="container">
+                <section class="contact">
+                    <div class="row contact-centers">
+                          <div class="col-md-12 contact-map">
+                            <h2 class="title-2" style="margin-bottom:10px; font-size:30px;"> View Map </h2>
+                           <!--  <ul class="nav nav-pills" id="map-address">
+                                <li class="active">
+                                    <a href="#" data-latitude="37.7620375" data-longitude="-122.4369531" data-map-title="United States" data-map-zoom="11" data-toggle="tab">United States</a>
+                                </li>
+                                <li>
+                                    <a href="#" data-latitude="51.4845012" data-longitude="-0.0941221" data-map-title="United Kingdom" data-map-zoom="16" data-toggle="tab">United Kingdom</a>
+                                </li>
+                                <li>
+                                    <a href="#" data-latitude="-37.8111937" data-longitude="144.958988" data-map-title="Australia" data-map-zoom="5" data-toggle="tab">Australia</a>
+                                </li>
+                            </ul> -->
+
+                            <!-- Google Map will load programatically inside this div. 
+                                You may change the Default Latitude and Longitude here. For multiple locations, change above.  -->
+
+                            <div id="google-map" class="google-map" data-latitude="26.9223153" data-longitude="75.7195601" data-map-title="India" data-map-zoom="11">
+                            </div>
+
+
+                            <script>
+                            function initMap() {
+                                var uluru = {lat: 26.896400, lng: 75.771218};
+                                var map = new google.maps.Map(document.getElementById('google-map'), {
+                                  zoom: 13,
+                                  center: uluru
+                                });
+                                var marker = new google.maps.Marker({
+                                  position: uluru,
+                                  map: map
+                                });
+                              }
+                        </script>
+                        <script async defer
+                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOdJAX4uCXWAzM7ES0AskzU84WQr256oc&callback=initMap">
+                        </script>
+
+                        </div>
+                      
+
+                       <!--  <div class="col-md-4">
+                            <div class="contact-area-box">
+                                <h4 class="contact-title subtitle">United Kingdom</h4>
+                                <div class="address">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    <p>384 Walworth Rd
+                                        <br> London SE17 2NG
+                                        <br> United Kingdom</p>
+                                </div>
+                                <div class="phone">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                    <p>+44 (345) 165 7235</p>
+                                </div>
+                                <div class="email">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    <p> <a href="mailto:london@offshoreindustry.com"> london@offshoreindustry.com </a> </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="contact-area-box">
+                                <h4 class="contact-title subtitle">Australia</h4>
+                                <div class="address">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    <p>274 Little Lonsdale St
+                                        <br> Melbourne VIC 3000
+                                        <br> Australia</p>
+                                </div>
+                                <div class="phone">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                    <p>+61 3 9670 5522</p>
+                                </div>
+                                <div class="email">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    <p> <a href="mailto:aus@offshoreindustry.com"> aus@offshoreindustry.com </a> </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> -->
+                  
+                <section class="contact-form">
+                    <div class="row form">
+                        <div class="col-md-6">
+                            <h2 class="title-2" style="margin-top:20px; margin-bottom:20px;"> Send us a message </h2>
+                            <form id="contact_form" class="form well-form contact-us-form"  method="post">
+                                <!-- Text input-->
+                                <div class="form-group">
+                                            <input type="text" name="contact-name" required="" class="form-control" id="input_name" placeholder="Your Name*"/>                                </div>
+                                <!-- Email input-->
+                                <div class="form-group">
+                                        <input type="email" name="contact-email" required="" class="form-control" id="input_email" placeholder="Email Address*"/>                                </div>
+
+                                <!-- Phone Number-->
+                                <div class="form-group">
+                                        <input type="text" name="contact-phone" required="" class="form-control" id="input_phone" placeholder="Phone"/>                                </div>
+
+                                <!-- Text area -->
+                                <div class="form-group">
+                                            <textarea rows="3" name="contact-message" required="" class="form-control" id="textarea_message" placeholder="Your Comment"></textarea>                                </div>
+                                <!-- Button -->
+                               <input type="submit" value="Send a Message" id="btn_submit" class="btn btn-clock btn-warning" title="Send" name="post">
+                               <div id="alert-msg" class="alert-msg"></div>
+                                <!-- <div id="js-contact-result" data-success-msg="Form submitted successfully." data-error-msg="Oops. Something went wrong."></div> -->
+                            </form>
+                           
+
+                        </div>
+                        <div class="col-md-6" style="margin-top:73px;">
+                            <div class="contact-area-box">
+                                <h4 class="contact-title subtitle">Corporate Office</h4>
+                                <div class="address">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    <p>23 Kailashpuri, Shop No-20, Shubh Mangal Complex
+                                        <br> New Sanganer Road, Sodala,
+                                           
+                                        <br> Jaipur - 302006 (Map) 
+                                            </p>
+                                </div>
+                                <div class="phone">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                    <p>+91 9694365726</p>
+                                </div>
+                                <div class="email">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    <p><a href="mailto:info@arihantfilters.com"> technovisionvideocon@gmail.com </a> </p>
+                                </div>
+                            </div>
+                        </div>
+                      
+                    </div>
+
+                </section>
+            </div>
+        </main>
+        <!-- Main Content Section -->
+
+   <% include ../include/footer %>
+</body>
+     <% include ../include/script %>
+</html>
